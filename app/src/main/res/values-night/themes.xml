@@ -1,7 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.AppDelicia01" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    <!-- Tema oscuro -->
+    <style name="Theme.AppDelicia" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Colores en dark mode -->
+        <item name="colorPrimary">#EADDFF</item>
+        <item name="colorOnPrimary">#212121</item>
+        <item name="colorSecondary">#6750A4</item>
+        <item name="colorSurface">#2C2C2C</item>
+        <item name="android:colorBackground">#121212</item>
+
+        <!-- Barra de estado -->
+        <item name="android:statusBarColor">#2C2C2C</item>
     </style>
+
+    <style name="Theme.AppDelicia.NoActionBar" parent="Theme.AppDelicia">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 </resources>

@@ -1,5 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Colores principales -->
+    <color name="colorPrimary">#6750A4</color>
+    <color name="colorPrimaryDark">#4F378B</color>
+    <color name="colorPrimaryLight">#EADDFF</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <!-- Fondos -->
+    <color name="colorBackground">#F9F9FB</color>
+    <color name="colorSurface">#FFFFFF</color>
+
+    <!-- Texto -->
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#616161</color>
 </resources>

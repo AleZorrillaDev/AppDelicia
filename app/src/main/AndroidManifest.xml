@@ -10,31 +10,34 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppDelicia01"
+        android:theme="@style/Theme.AppDelicia"
         tools:targetApi="31">
 
-        <!-- 1) Pantalla inicial -->
+        <!-- Splash (sin ActionBar) -->
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppDelicia01.NoActionBar">   <!-- opcional: sin ActionBar -->
+            android:theme="@style/Theme.AppDelicia.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- 2) Catálogo (debe existir activity_catalog.xml) -->
+        <!-- Catálogo -->
         <activity android:name=".ui.catalog.CatalogActivity" />
 
-        <!-- 3) Carrito -->
+        <!-- Carrito -->
         <activity android:name=".ui.cart.CartActivity" />
 
-        <!-- 4) Login (si lo usarás en el checkout) -->
+        <!-- Login -->
         <activity android:name=".ui.auth.LoginActivity" />
 
-        <!-- 5) Perfil del usuario -->
+        <!-- Perfil -->
         <activity android:name=".ui.profile.ProfileActivity" />
+
+        <activity android:name=".ui.payment.PaymentActivity" />
+
 
     </application>
 </manifest>

@@ -1,12 +1,22 @@
-<resources>
-    <!-- Tema base de tu app -->
-    <style name="Theme.AppDelicia01" parent="Theme.Material3.DayNight">
-        <!-- colores/atributos -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Tema principal de la app -->
+    <style name="Theme.AppDelicia" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Colores -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorSecondary">@color/colorPrimaryLight</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+
+        <!-- Barra de estado -->
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
     </style>
 
-    <!-- Variante sin barra para el Splash -->
-    <style name="Theme.AppDelicia01.NoActionBar" parent="Theme.AppDelicia01">
+    <!-- Variante sin ActionBar (para el Splash) -->
+    <style name="Theme.AppDelicia.NoActionBar" parent="Theme.AppDelicia">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
 </resources>

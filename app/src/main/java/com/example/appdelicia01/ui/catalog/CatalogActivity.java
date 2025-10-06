@@ -17,30 +17,40 @@ import com.example.appdelicia01.ui.cart.CartManager;
 import java.util.List;
 
 public class CatalogActivity extends AppCompatActivity {
-    @Override protected void onCreate(Bundle b){
+    @Override
+    protected void onCreate(Bundle b) {
         super.onCreate(b);
         setContentView(R.layout.activity_catalog);
+
+        // Cargar productos
         List<Product> items = SampleData.products();
+
+        // Indexar productos en el CartManager
         CartManager.get().indexProducts(items);
+
+        // Configurar RecyclerView
         RecyclerView rv = findViewById(R.id.rvProducts);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(new ProductAdapter(items, new ProductAdapter.Listener() {
-            @Override public void onAdd(Product p) {
+            @Override
+            public void onAdd(Product p) {
                 CartManager.get().add(p.getId());
-                Toast.makeText(CatalogActivity.this, "Agregado: "+p.getName(),
+                Toast.makeText(CatalogActivity.this,
+                        "Agregado: " + p.getName(),
                         Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(CatalogActivity.this, CartActivity.class);
+                startActivity(intent);
             }
-            @Override public void onShare(Product p) {
-                Intent share = new Intent(Intent.ACTION_SEND); // Intent implícito
+
+            @Override
+            public void onShare(Product p) {
+                Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
-                share.putExtra(Intent.EXTRA_TEXT, p.getName()+" – S/ "+p.getPrice());
+                share.putExtra(Intent.EXTRA_TEXT,
+                        p.getName() + " – S/ " + p.getPrice());
                 startActivity(Intent.createChooser(share, "Compartir producto"));
             }
         }));
-        // Acceso al carrito (ej. desde menú simple)
-        findViewById(android.R.id.content).setOnLongClickListener(v -> {
-            startActivity(new Intent(CatalogActivity.this, CartActivity.class)); // Intent explícito
-            return true;
-        });
     }
 }
